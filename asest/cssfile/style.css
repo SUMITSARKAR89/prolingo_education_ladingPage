@@ -6,7 +6,7 @@
 .darkMood {
   --bg-primary-color: #000000;
   --bg-secondary-color: #dadde0;
-  --bg-roll-color: #b8512b;
+  --border-roll-color: #8b746b;
   --bg-filter-white: #1f252c;
   --bg-filter-green: #4e5247;
 
@@ -39,16 +39,19 @@
   );
   --linear-3: linear-gradient(to top, rgb(247, 241, 241), #1a1a1a);
 
+
+   --filter: #000000cb;
+
   /*others color*/
   --scrollbar-color: #000000;
-  --scrollbar-thump: #dadde0;
-  --scrollbar-hover: #f0743e;
+  --scrollbar-thump:#f0743e;
+  --scrollbar-hover: ;
 }
 
 :root {
   --bg-primary-color: #ffffff;
   --bg-secondary-color: #25282b;
-  --bg-roll-color: #f0743e;
+  --border-roll-color: #f0733e42;
   --bg-filter-white: #e5ecf4;
   --bg-filter-green: #7b8173;
 
@@ -78,6 +81,9 @@
   --linear-2: linear-gradient(to top, rgb(19, 18, 18), rgba(0, 0, 0, 0.384));
   --linear-3: linear-gradient(to top, #0a0a0a, #1a1a1a);
 
+    --filter: #ffffffbd;
+ 
+
   /*others color*/
   --scrollbar-color: #ffffff;
   --scrollbar-thump: #f0743e;
@@ -90,15 +96,14 @@
 
   /* fontsize  */
   --h1: 4rem;
-  --h2: 3rem ;
-  --h3:2.5rem ;
+  --h2: 3rem;
+  --h3: 2.5rem;
   --h4: 1.5rem;
 
-
   --font-14: 0.875rem;
-  --font-16 : 1rem;
-  --font-18 : 1.125rem;
-  --font-24 : 1.5rem;
+  --font-16: 1rem;
+  --font-18: 1.125rem;
+  --font-24: 1.5rem;
 
   /* z-index  */
   --z-minus: -1;
@@ -229,8 +234,32 @@ h5 {
   width: 100%;
   font-family: "IBM Plex Sans", sans-serif;
 }
-p{
+h1{
+  font-size: var(--h1);
+}
+h2{
+  font-size: var(--h2);
+}
+h3{
+  font-size: var(--h3);
+}
+h4{
+  font-size: var(--h4);
+}
+p {
   font-family: "Noto Sans", sans-serif;
+}
+.font-14 {
+  font-size: var(--font-14);
+}
+.font-16 {
+  font-size: var(--font-16);
+}
+.font-18 {
+  font-size: var(--font-18);
+}
+.font-24 {
+  font-size: var(--font-24);
 }
 
 /* ==========================================================
@@ -297,64 +326,16 @@ p{
 
 /* =====================cursor customizing=============== */
 /* =====================controll customizing=============== */
-/* #control {
-  position: fixed;
-  top: 25px;
-  right: 5%;
-  padding: 2px 4px;
-  width: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  border: 1px solid #46434313;
-  border-radius: 40px;
-  background: var(--sec-hover);
-  z-index: 999;
-  transition: var(--transition-1);
-   animation: control 1s ease-in-out;
-}
-@keyframes control {
-  0%{
-    transform: translateX(300px);
-  }
-  100%{
-     transform: translateX(0);
 
-  }
-  
-}
-#control i {
-  font-size: var(--font-16);
-  padding: 10px;
-  border: 1px solid #22222228;
-  border-radius: 50%;
-  transform: rotate(0);
-
-  cursor: pointer;
-  transition: 1s ease;
-  box-shadow: rgba(37, 37, 37, 0.2) 0px 8px 24px;
-}
-#control i:hover {
-  transform: rotate(20deg);
-}
-#control .sun {
-  background: var(--control-sun);
-  color: var(--grey-txt);
-}
-#control .moon {
-  background: var(--control-moon);
-  color: var(--control-sun);
-} */
 
 /* =====================others=========================== */
 .container {
   max-width: 100%;
   padding: 0.5% 10%;
-  margin: 0 1%;
+  
 }
 section {
-  margin: 8% 20% 5%;
+  margin: 8% 10% 5%;
   max-width: 100%;
   position: relative;
   transition: var(--transition-1);
@@ -363,4 +344,242 @@ header,
 main,
 footer {
   position: relative;
+}
+
+/* --------------------------------------------------------------
+-----------------------header start here----------------------
+-------------------------------------------------------------- */
+
+header {
+  max-width: 100%;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100%;
+  background: transparent;
+
+
+  padding: 20px 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 25px;
+  transition: var(--transition-2);
+
+}
+header .logo {
+  max-width: 100%;
+  width: fit-content;
+  /* box-shadow: rgba(200, 200, 206, 0.25) 0px 30px 60px -12px inset,
+    rgba(243, 241, 241, 0.918) 0px 18px 36px -18px inset; */
+    background: #ffffffb2;
+    backdrop-filter: blur(5px);
+  padding: 5px 15px;
+  border-radius: 25px;
+  position: relative;
+  transition: var(--transition-2);
+}
+header .logo:hover {
+  box-shadow: rgba(200, 200, 206, 0.25) 0px 30px 60px -12px inset,
+    rgba(243, 241, 241, 0.507) 0px 18px 36px -18px inset;
+}
+.logo a img {
+  width: 90px;
+  transition: var(--transition-2);
+}
+.logo a img:hover {
+  transform: scale(1.02);
+}
+nav {
+  position: relative;
+  max-width: 100%;
+  padding: 20px 15px;
+
+}
+nav .nav-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 5px 25px;
+  border-radius: 25px;
+    background:var(--filter);
+    backdrop-filter: blur(2px);
+  border: 1px solid var(--border-roll-color);
+}
+.nav-body .nav-link {
+  cursor: pointer;
+  color: var(--txt-blk);
+  width: 100%;
+  text-transform: capitalize;
+  display: flex;
+  padding: 5px 0;
+  font-size: var(--font-16);
+  font-weight: 500;
+  position: relative;
+  transition: var(--transition-2);
+}
+.nav-link::after,
+.dropdown-body a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  content: "";
+  background: var(--scrollbar-thump);
+  transition: var(--transition-2);
+  border-radius: 5px;
+}
+.nav-link:hover::after,
+.dropdown-body a:hover::after {
+  width: 100%;
+}
+.nav-link p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  position: relative;
+}
+.nav-link p i {
+  display: block;
+  font-size: var(--font-18);
+  margin-top: 2px;
+  transition: var(--transition-3);
+  color: var(--txt-wht-grey);
+  opacity: 0.5;
+}
+.nav-link.nav-dropdown:hover .dropdown {
+  transform: scale(1);
+}
+.nav-link:hover p i {
+  transform: rotate(180deg);
+  opacity: 0.9;
+}
+
+.nav-link.nav-dropdown .dropdown {
+  position: absolute;
+  width: 150px;
+  top: 30px;
+  padding: 2px;
+  transform: scale(0);
+  left: -70px;
+  transition: var(--transition-2);
+}
+.dropdown .dropdown-body {
+  margin-top: 10px;
+  padding: 15px;
+  box-shadow: #b8512b33 10px 4px 100px 0px;
+  border: 1px solid var(--border-roll-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary-color);
+  gap: 15px;
+}
+
+.dropdown-body a {
+  color: var(--txt-blk);
+  font-size: var(--font-16);
+  font-weight: 500;
+  max-width: 100%;
+  width: fit-content;
+  padding-bottom: 3px;
+  text-transform: capitalize;
+  position: relative;
+}
+header .head-pan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.head-pan .button-group {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 1px;
+  transition: transform 0.5s ease-in-out;
+}
+.circle,
+.pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease-in-out;
+}
+.circle {
+  background: var(--scrollbar-thump);
+  color: var(--txt-wht);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: var(--font-14);
+}
+
+.pill {
+  background: var(--bg-secondary-color);
+  color: var(--txt-wht);
+  padding: 0 30px;
+  height: 38px;
+  border-radius: 20px;
+  font-size: var(--font-16);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.button-group:hover .circle {
+  transform: translateX(80px) rotate(360deg);
+}
+
+.button-group:hover .pill {
+  transform: translateX(-60px);
+}
+
+.head-pan .toggle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 30px;
+    gap: 3px;
+    background: var(--bg-primary-color);
+    border: 1px solid var(--scrollbar-thump);
+    border-radius: 35px;
+  
+}
+.toggle .toggleOn,
+.toggle .toggleOff{
+  width: 20px;
+  border-radius: 50%;
+  height: 20px;
+  cursor: pointer;
+
+}
+.toggleOn{
+  background: #000;
+
+}
+ .toggleOff{
+  background: #fff;
+ }
+
+
+ /* --------------------------------------------------------------
+-----------------------main start here----------------------
+-------------------------------------------------------------- */
+#hero{
+  position: relative;
+  transition: var(--transition-1);
+  max-width: 100%;
+}
+#hero h1{
+  
+  width: 100%;
+  margin: 5% auto;
+  text-align: center;
 }
