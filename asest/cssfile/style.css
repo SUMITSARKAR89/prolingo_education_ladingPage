@@ -81,7 +81,7 @@
   --linear-2: linear-gradient(to top, rgb(19, 18, 18), rgba(0, 0, 0, 0.384));
   --linear-3: linear-gradient(to top, #0a0a0a, #1a1a1a);
 
-    --filter: #ffffffbd;
+    --filter: #fffffff2;
  
 
   /*others color*/
@@ -331,11 +331,11 @@ p {
 /* =====================others=========================== */
 .container {
   max-width: 100%;
-  padding: 0.5% 10%;
+  padding: 0.5% 2%;
   
 }
 section {
-  margin: 8% 10% 5%;
+  margin: 8% 7% 5%;
   max-width: 100%;
   position: relative;
   transition: var(--transition-1);
@@ -381,6 +381,7 @@ header .logo {
   border-radius: 25px;
   position: relative;
   transition: var(--transition-2);
+  border: 1px solid var(--border-roll-color);
 }
 header .logo:hover {
   box-shadow: rgba(200, 200, 206, 0.25) 0px 30px 60px -12px inset,
@@ -478,7 +479,8 @@ nav .nav-body {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  background: var(--bg-primary-color);
+  background: var(--filter);
+  backdrop-filter: blur(5px);
   gap: 15px;
 }
 
@@ -498,7 +500,8 @@ header .head-pan {
   align-items: center;
   gap: 5px;
 }
-.head-pan .button-group {
+.head-pan .button-group,
+.tag .button-group {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -534,6 +537,14 @@ header .head-pan {
 .button-group:hover .circle {
   transform: translateX(80px) rotate(360deg);
 }
+.tag .button-group:hover .circle{
+  transform: translateX(190px) rotate(360deg);
+
+}
+.tag .button-group:hover .pill{
+  transform: translateX(-35px);
+
+}
 
 .button-group:hover .pill {
   transform: translateX(-60px);
@@ -558,7 +569,14 @@ header .head-pan {
   border-radius: 50%;
   height: 20px;
   cursor: pointer;
+  transition: var(--transition-1);
+  border: 1px solid transparent;
 
+}
+.toggle .toggleOn:hover,
+.toggle .toggleOff:hover{
+
+  border: 1px solid var(--border-roll-color);
 }
 .toggleOn{
   background: #000;
@@ -579,7 +597,77 @@ header .head-pan {
 }
 #hero h1{
   
-  width: 100%;
+  width: 80%;
   margin: 5% auto;
   text-align: center;
+}
+.hero-card{
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px;
+  background: var(--bg-primary-color);
+  border-radius: 1.05rem;
+
+}
+.hero-img{
+  width: 99%;
+  height: 79vh;
+  border-radius: 1.25rem;
+  border: 8px solid var(--bg-primary-color);
+  overflow: hidden;
+  position: relative;
+}
+.hero-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tag{
+  width: 250px;
+  height: 50px;
+  position: absolute;
+  bottom: 10px;
+  background: var(--bg-primary-color);
+ 
+  left: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 8px solid var(--bg-primary-color);
+  border-top: 8px solid var(--bg-primary-color);
+  border-bottom: 8px solid var(--bg-primary-color);
+  border-right: 8px solid var(--bg-primary-color);
+  padding: 10px;
+  border-radius: 0 1rem 0 0;
+}
+.tag::before{
+  position: absolute;
+  content: '';
+  width: 30px;
+  height: 30px;
+  top: -38px;
+  left: 0;
+  background: transparent;
+  border-bottom-left-radius: 20px;
+  box-shadow: -0.355rem 0.355rem var(--bg-primary-color) ;
+
+}
+.tag::after{
+    position: absolute;
+  content: '';
+  width: 30px;
+  height: 30px;
+  bottom: -5px;
+  right: -38px;
+  background: transparent;
+  box-shadow: -0.355rem 0.355rem var(--bg-primary-color) ;
+  border-bottom-left-radius: 20px;
+
 }
