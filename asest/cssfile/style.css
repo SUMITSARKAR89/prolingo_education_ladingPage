@@ -379,12 +379,13 @@ header {
   width: 100%;
   background: transparent;
 
-  padding: 20px 15px;
+  padding: 10px 15px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 25px;
   transition: var(--transition-2);
+  
 }
 header .logo {
   max-width: 100%;
@@ -623,7 +624,7 @@ header .head-pan {
 
 .menu {
   position: absolute;
-  top: 25px;
+  top: 15px;
   right: -100%;
   display: flex;
   justify-content: center;
@@ -2016,14 +2017,15 @@ form button:hover {
 }
 #blogHtml h1 {
   max-width: 100%;
-  width: 90%;
+  width: 100%;
+  padding: 15px;
   margin: 10% auto 4%;
   text-align: left;
 }
 
 .blog-container {
-  padding: 2% 8%;
-  margin: 0 auto ;
+  padding: 2% 8% ; 
+  margin: 0 auto;
   width: 100%;
   max-width: 100%;
   position: relative;
@@ -2036,21 +2038,40 @@ form button:hover {
   height: 100vh;
   overflow-y: auto;
   scroll-behavior: smooth;
-  border: 1px solid red;
+  
+
+  z-index: 2;
 }
-.blog-container .blog-left{
-  width: 30%;
+.blog-container .blog-left {
+  width: 25%;
+  max-width: 100%;
+  position: sticky;
+  top: 50%;
+  left: 30px;
   
 }
-.blog-container .blog-right{
+.blog-container .blog-left .blog-btns {
+  position: relative;
   width: 100%;
-
-  
-    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
 }
 
+.blog-container .blog-right {
+  width: 75%;
+  height: 100vh;
+  padding: 5% 6%;
+  top: 0;
+  right: 30px;
+  
+  position: absolute;
+  
+}
 
-.blog-btns .blogBtn{
+.blog-btns .blogBtn {
   text-transform: capitalize;
   font-size: var(--font-18);
   font-weight: 500;
@@ -2060,38 +2081,173 @@ form button:hover {
   position: relative;
   transition: var(--transition-2);
 }
-.blogBtn::after{
+.blogBtn::after {
   position: absolute;
-  content: '';
+  content: "";
   width: 0;
   height: 1px;
   bottom: -3px;
   left: 0;
   background: var(--scrollbar-thump);
   border-radius: 2px;
-    transition: var(--transition-2);
+  transition: var(--transition-2);
 }
-.blogBtn:hover::after{
+.blogBtn:hover::after {
   width: 100%;
 }
-.blogBtn.active{
+.blogBtn.active {
   color: var(--scrollbar-thump);
 }
 
-.blog-right .blog-content{
+.blog-right .blog-content {
   padding: 15px;
   width: 100%;
   height: 100vh;
+ 
   transition: var(--transition-2);
   position: relative;
   max-width: 100%;
   display: none;
   opacity: 0;
 }
-.blog-content.active{
+.blog-content.active {
   display: block;
   opacity: 1;
+  
 }
+
+/* --------------------------- */
+.blog-body-container{
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+  position: relative;
+  transition: var(--transition-1);
+}
+.blog-body-container .blog-bodyOne{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  transition: var(--transition-1);
+
+}
+ .blog-bodyOne .blog-bodyOne-l1{
+  width: 70%;
+  height: auto;
+  position: relative;
+  transition: var(--transition-1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+ }
+ 
+  .blog-bodyOne .blog-bodyOne-r1{
+    width: 30%;
+    height: auto;
+    position: relative;
+    transition: var(--transition-1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .blog-bodyOne-l1-img{
+    height: 80vh;
+    width: 100%;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-3);
+  }
+
+  .blog-bodyOne-l1-img img,
+  .blog-body-r1-img img,
+  .blog-bodyTwo-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-3);
+    transform: scale(1);
+  }
+  .blog-bodyOne-l1-img:hover img,
+  .blog-body-r1-img:hover img,
+   .blog-bodyTwo-img:hover img{
+    transform: scale(1.1);
+  }
+  .blog-body-r1-img{
+    height: 30vh;
+    width: 100%;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-3);
+
+  }
+  .blog-bodyOne-l1 .b-badge,
+ .blog-bodyOne-r1 .b-badge,
+ .blog-bodyTwo-card .b-badge{
+  margin-left: 10px;
+  font-size: var(--font-14);
+  color: var(--txt-blk);
+  background: var(--bg-c2);
+  border: 1px solid var(--txt-blk);
+  border-radius: 25px;
+  padding: 8px 20px;
+  width: fit-content;
+  text-transform: capitalize;
+  text-align: center;
+ }
+ .blog-bodyOne-l1 h4,
+ .blog-bodyOne-r1 h4,
+ .blog-bodyTwo-card h4{
+  color: var(--txt-blk);
+  font-weight: 500;
+  margin-left: 10px;
+  line-height: 28px;
+ }
+
+ .blog-body-container .blog-bodyTwo{
+  max-width: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  transition: var(--transition-2);
+ }
+ .blog-bodyTwo .blog-bodyTwo-card{
+  height: auto;
+    width: 100%;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-3);
+    margin: 15px 0;
+    display:flex ;
+    flex-direction: column;
+    gap: 15px;
+
+ }
+ .blog-bodyTwo-card .blog-bodyTwo-img{
+  width: 100%;
+  height: 40vh;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  transition: var(--transition-3);
+  
+ }
+ 
+
+
+
+
+
 
 @media (max-width: 1280px) {
   :root {
@@ -2173,6 +2329,16 @@ form button:hover {
   .footer-card p {
     text-align: center;
   }
+   .blog-body-container .blog-bodyTwo{
+    grid-template-columns: repeat(2, 1fr);
+   }
+   .blog-body-container .blog-bodyOne{
+    flex-direction: column;
+   }
+    .blog-bodyOne .blog-bodyOne-l1,
+    .blog-bodyOne .blog-bodyOne-r1{
+      width: 100%;
+    }
 }
 
 @media (max-width: 980px) {
@@ -2258,6 +2424,43 @@ form button:hover {
   .contact-container .contact-info {
     margin: 0 auto;
   }
+  .blog-container{
+    flex-direction: column;
+  }
+  .blog-container .blog-left{
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--filter);
+    backdrop-filter: blur(20px);
+    z-index: 10;
+    
+    padding: 25px;
+    padding-bottom: 3%;
+    margin-top: -7%;
+    border-radius: 20px;
+    position: fixed;
+    
+  }
+  .blog-container .blog-left .blog-btns{
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15%;
+    gap: 25px;
+  }
+  .blog-container .blog-right{
+    width: 100%;
+    right: 0;
+    left: 50%;
+    top: 30%;
+    padding: 5% 7%;
+
+    transform: translateX(-50%);
+  }
+  #blogHtml h1{
+    text-align: center;
+  }
 }
 @media (max-width: 768px) {
   :root {
@@ -2280,7 +2483,8 @@ form button:hover {
   .head-pan .toggle {
     margin-right: 50px;
   }
-  .learning-container {
+  .learning-container,
+   .blog-body-container .blog-bodyTwo {
     grid-template-columns: 1fr;
   }
   .learning-container .learing-card:nth-child(2) {
@@ -2314,6 +2518,9 @@ form button:hover {
     --font-18: 0.9rem;
     --font-24: 1.1rem;
   }
+  #responsive-nav {
+    width: 95%;
+  }
   #footerbody .footer-social-link {
     grid-template-columns: 1fr;
   }
@@ -2329,4 +2536,21 @@ form button:hover {
   .blog-artcle-title a {
     width: 220px;
   }
+  .blog-container .blog-left .blog-btns{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+     
+    
+  }
+  .blog-btns .blogBtn{
+   
+    max-width: 100%;
+    text-align: center;
+    margin-left: 60px;
+    
+  }
+  
+
 }
