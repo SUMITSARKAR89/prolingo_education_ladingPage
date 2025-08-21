@@ -238,7 +238,7 @@
         </div>
       </section>
       <!-- ===========================align--------------------  -->
-      <section id="align" >
+      <section id="align">
         <div class="container">
           <h3>Find the path that aligns with your aspirations.</h3>
           <div class="align-container">
@@ -291,7 +291,10 @@
         </div>
       </section>
       <!-- ===========================curriculum--------------------  -->
-      <section id="curriculum" style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
+      <section
+        id="curriculum"
+        style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px"
+      >
         <div class="container">
           <div class="curriculum-title">
             <h3>Roadmap to Japanese mastery</h3>
@@ -484,7 +487,7 @@
         </div>
       </section>
       <!-- ===========================prolingo--------------------  -->
-      <section id="prolingo" >
+      <section id="prolingo">
         <div class="container">
           <div class="prolingo-title">
             <h3>3000+ learners have trusted ProLingo</h3>
@@ -585,7 +588,10 @@
         </div>
       </section>
       <!-- ===========================resource--------------------  -->
-      <section id="resource" style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
+      <section
+        id="resource"
+        style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px"
+      >
         <div class="container">
           <h3>Learning resources that bring language to life</h3>
 
@@ -641,7 +647,10 @@
       </section>
 
       <!-- ===========================faq--------------------  -->
-      <section id="faq" style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
+      <section
+        id="faq"
+        style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px"
+      >
         <div class="container">
           <h2>Discover more in our FAQs</h2>
 
@@ -781,7 +790,7 @@
           </a>
         </div>
         <div class="foot-line"></div>
-        <p class="font-14">
+        <p class="font-14 f-p">
           Built and copywrite by SumitSarkar © 2025 All rights reserved.
         </p>
       </div>
@@ -789,5 +798,47 @@
 
     <!-- -----------------------------javascript---------------------- -->
     <script src="asest/jsfile/app.js"></script>
+    <!-- -------------------------sroll revieal-------------------------  -->
+    <script>
+      ScrollReveal({
+        // reset: true,
+        distance: "60px",
+        duration: 2500,
+        delay: 400,
+      });
+
+      ScrollReveal().reveal("nav", { delay: 200, origin: "top" });
+      ScrollReveal().reveal("", { delay: 200, origin: "top", interval: 100 });
+
+      ScrollReveal().reveal(".hero-badge", { delay: 300, origin: "left" });
+      ScrollReveal().reveal(".curriculum-faq, .resource-card", {
+        delay: 400,
+        origin: "left",
+      });
+      ScrollReveal().reveal("", { delay: 200, origin: "left", interval: 100 });
+      ScrollReveal().reveal("", { delay: 100, origin: "left" });
+
+      ScrollReveal().reveal("h1, h2, h3, .f-p", {
+        delay: 200,
+        origin: "bottom",
+      });
+      ScrollReveal().reveal(".resource-card2, .footer-social-link", {
+        delay: 300,
+        origin: "bottom",
+      });
+      ScrollReveal().reveal(".tranform-card, .learing-card, .faq-content", {
+        delay: 400,
+        origin: "bottom",
+        interval: 200,
+      });
+
+      ScrollReveal().reveal(".hero-badge2", { delay: 300, origin: "right" });
+      ScrollReveal().reveal(".f2", { delay: 100, origin: "right" });
+      ScrollReveal().reveal(".align-card, .curriculum-img ", {
+        delay: 400,
+        origin: "right",
+        interval: 300,
+      });
+    </script>
   </body>
 </html>

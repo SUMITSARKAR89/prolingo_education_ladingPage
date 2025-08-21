@@ -57,3 +57,21 @@ curTitle.forEach( (title, index) => {
           curImg[index].classList.add('ci-active');
      });
 });
+
+
+const blogBtn = document.querySelectorAll(".blogBtn");
+const blogContent= document.querySelectorAll(".blog-content");
+
+blogBtn.forEach((btn, index) => {
+     btn.addEventListener('click', () => {
+          blogBtn.forEach (btn => {
+               btn.classList.remove('active');
+          });
+           btn.classList.add('active');
+
+           blogContent.forEach( blog => {
+               blog.classList.remove('active');
+           });
+           blogContent[index].classList.add('active');
+     });
+});

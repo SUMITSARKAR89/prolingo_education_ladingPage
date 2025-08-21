@@ -252,7 +252,7 @@
           </a>
         </div>
         <div class="foot-line"></div>
-        <p class="font-14">
+        <p class="font-14 f-p">
           Built and copywrite by SumitSarkar © 2025 All rights reserved.
         </p>
       </div>
@@ -260,5 +260,31 @@
 
     <!-- -----------------------------javascript---------------------- -->
     <script src="asest/jsfile/app.js"></script>
+
+    <!-- -------------------------sroll revieal-------------------------  -->
+     <script>
+       ScrollReveal({
+        //  reset: true,
+        distance: "60px",
+        duration: 2500,
+        delay: 400
+        });
+
+        ScrollReveal().reveal('nav', {delay: 200, origin: 'top'});
+        ScrollReveal().reveal('', { delay: 200, origin: 'top', interval: 100 });
+
+        ScrollReveal().reveal('', { delay: 300, origin: 'left' });
+        ScrollReveal().reveal('', { delay: 400, origin: 'left' });
+        ScrollReveal().reveal('.contact-info p', { delay: 200, origin: 'left', interval: 400 });
+        ScrollReveal().reveal('', { delay: 100, origin: 'left' });
+        
+        ScrollReveal().reveal('h1, h2, h3, .f-p, h4', {delay: 200, origin: 'bottom'});
+        ScrollReveal().reveal('.footer-social-link', {delay: 300, origin: 'bottom'});
+         ScrollReveal().reveal('.contact-info', { delay: 400, origin: 'bottom', interval: 200 });
+
+        ScrollReveal().reveal('form', { delay: 300, origin: 'right' });
+        ScrollReveal().reveal('.f2', { delay: 100, origin: 'right' });
+        ScrollReveal().reveal(' ', { delay: 400, origin: 'right', interval: 300 });
+     </script>
   </body>
 </html>
